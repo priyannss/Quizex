@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    line-height: calc(1em + 0.5rem);
+}
+
+:root {
+    /* colors */
+    --clr-dark: #070a13;
+    --clr-light: #f1f5f9;
+    --clr-neutral: #fafafa;
+    --clr-slate400: #94a3b8;
+    --clr-slate600: #475569;
+    --clr-gray600: #4b5563;
+    --clr-slate800: #1e293b;
+    --clr-green: #16a34a;
+    --clr-rose: #e11d48;
+    --clr-indigo: #4f46e5;
+
+    /* sizes */
+    --size-xxs: 0.5rem;
+    --size-xs: 0.75rem;
+    --size-sm: 0.875rem;
+    --size-base: 1rem;
+    --size-lg: 1.125rem;
+    --size-xl: 1.25rem;
+    --size-2xl: 1.5rem;
+    --size-3xl: 1.875rem;
+    --size-4xl: 2.25rem;
+    --size-5xl: 3rem;
+    --size-6xl: 3.75rem;
+    --size-7xl: 4.5rem;
+    --size-8xl: 6rem;
+    --size-9xl: 8rem;
+    --size-10xl: 10rem;
+}
+
+html {
+    scroll-behavior: smooth;
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #364fa2);
+    color: var(--clr-dark);
+}
+
+#quiz-container {
+    width: 420px;
+    background-color: var(--clr-neutral);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0, 4px, 20px, rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-family: cursive;
+}
+
+#quiz-setup div {
+    margin: 10px 0;
+}
+
+#quiz-setup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: var(--size-base);
+}
+
+#category,
+#amount,
+#difficulty {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: var(--size-sm);
+    color: var(--clr-slate600);
+    background: var(--clr-neutral);
+    outline: none;
+}
+
+#start-btn {
+    display: inline-block;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: -0.05em;
+    background-color: var(--clr-rose);
+    color: #f1f5f9;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(225, 29, 72, 0.5),
+                0 6px 6px rgba(225, 29, 72, 0.5),
+                0 0 100px -10px var(--clr-rose);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(225, 29, 72, 0.25),
+                0 10px 10px rgba(225, 29, 72, 0.22),
+                0 0 120px -10px var(--clr-rose);
+}
+
+
+#progress,
+#currentScore,
+#highScore {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: var(--size-base);
+}
+
+#question {
+    font-size: var(--size-base);
+    margin: 20px 0;
+    color: var(--clr-gray600);
+}
+
+.answer-btn {
+    width: calc(100% - 20px);
+    padding: 0.6em 1em;
+    margin-bottom: 12px;
+    background-color: var(--clr-indigo);
+    color: #f1f5f9;
+    border-radius: 8px;
+    font-size: var(--size-sm);
+    cursor: pointer;
+    box-shadow: 0 5px 8px rgba(27, 64, 199, 0.707);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.answer-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+.answer-btn:disabled,
+.answer-btn.correct,
+.answer-btn.incorrect {
+    cursor: default;
+    transform: none;
+}
+
+#result {
+    font-size: var(--size-sm);
+    color: var(--clr-rose);
+    margin-top: 10px;
+}
+
+.correct {
+    background-color: var(--clr-green) !important;
+    box-shadow: 0 5px 8px rgba(22, 163, 74, 0.707);
+}
+
+.incorrect {
+    background-color: var(--clr-rose) !important;
+    box-shadow: 0 5px 8px rgba(225, 29, 71, 0.707);
+}
+
+.restart-btn {
+    display: inline-block;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: -0.05em;
+    background-color: var(--clr-rose);
+    color: #f1f5f9;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(225, 29, 72, 0.5),
+                0 6px 6px rgba(225, 29, 72, 0.5),
+                0 0 100px -10px var(--clr-rose);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.restart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(225, 29, 72, 0.25),
+                0 10px 10px rgba(225, 29, 72, 0.22),
+                0 0 120px -10px var(--clr-rose);
+}
