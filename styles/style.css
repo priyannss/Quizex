@@ -65,21 +65,21 @@ button {
 
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #c9d6ff;
-    background: linear-gradient(to right, #e2e2e2, #364fa2);
+    /* background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #364fa2); */
+    background: url("bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: var(--clr-dark);
 }
 
 #quiz-container {
     width: 420px;
-    background-color: var(--clr-neutral);
+    background-color: #fafafac8;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0, 4px, 20px, rgba(0, 0, 0, 0.2);
-}
-
-.logo {
-    font-family: cursive;
 }
 
 #quiz-setup div {
@@ -175,6 +175,7 @@ body {
     font-size: var(--size-sm);
     color: var(--clr-rose);
     margin-top: 10px;
+    font-weight: 600;
 }
 
 .correct {
@@ -208,4 +209,11 @@ body {
     box-shadow: 0 14px 28px rgba(225, 29, 72, 0.25),
                 0 10px 10px rgba(225, 29, 72, 0.22),
                 0 0 120px -10px var(--clr-rose);
+}
+
+
+@media only screen and (max-width: 455px) {
+    #quiz-container {
+        width: 320px;
+    }
 }
